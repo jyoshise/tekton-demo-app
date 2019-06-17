@@ -1,0 +1,37 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: tekton-demo
+  labels:
+    app: tekton-demo
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 8080
+      targetPort: 8080
+      protocol: TCP
+      name: tekton-demo
+  selector:
+    app: tekton-demo
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tekton-demo
+  labels:
+    app: tekton-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tekton-demo
+  template:
+    metadata:
+      labels:
+        app: tekton-demo
+    spec:
+      containers:
+      - name: tekton-demo
+        image: gcr.io/k8s-skaffold/tekton-demo
+        ports:
+        - containerPort: 8080

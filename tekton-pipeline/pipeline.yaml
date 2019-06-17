@@ -1,7 +1,8 @@
 apiVersion: tekton.dev/v1alpha1
 kind: Pipeline
 metadata:
-  name: tutorial-pipeline
+  name: demo-pipeline
+  namespace: tekton-demo
 spec:
   resources:
     - name: source-repo

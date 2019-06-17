@@ -1,12 +1,12 @@
 apiVersion: tekton.dev/v1alpha1
 kind: PipelineRun
 metadata:
-  name: tutorial-pipeline-run-1
+  name: demo-pipeline-run-1
   namespace: tekton-demo
 spec:
   serviceAccount: build-bot
   pipelineRef:
-    name: tutorial-pipeline
+    name: demo-pipeline
   resources:
     - name: source-repo
       resourceRef:

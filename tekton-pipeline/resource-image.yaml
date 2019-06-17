@@ -2,7 +2,6 @@ apiVersion: tekton.dev/v1alpha1
 kind: PipelineResource
 metadata:
   name: image-tektondemo
-  namespace: tekton-demo
 spec:
   type: image
   params:

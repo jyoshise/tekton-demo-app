@@ -34,7 +34,7 @@ spec:
           - name: image
             resource: web-image
             from:
-              - build-skaffold-web
+              - build-web
       params:
         - name: path
           value: /workspace/source/manifests/deployment.yaml
